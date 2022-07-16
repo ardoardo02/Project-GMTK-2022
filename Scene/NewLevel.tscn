@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scene/Dot/Titik4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Border/Border.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Level.gd" type="Script" id=3]
+[ext_resource path="res://Scene/Poin/Poin.tscn" type="PackedScene" id=4]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Poin" parent="." instance=ExtResource( 4 )]
+position = Vector2( -221, -222 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Border" parent="." instance=ExtResource( 2 )]
+
+[node name="Titik4" parent="." instance=ExtResource( 1 )]
