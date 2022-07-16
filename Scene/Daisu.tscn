@@ -29,13 +29,6 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.48913, -123.545 ), 0.0, 0.
 [sub_resource type="CurveTexture" id=9]
 curve = SubResource( 8 )
 
-[sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0, 0.689441, 1 )
-colors = PoolColorArray( 0.599696, 0, 0.751032, 1, 0.685648, 0.280028, 0.731501, 1, 0.657596, 0.478737, 0.696344, 1 )
-
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
-
 [sub_resource type="Curve" id=10]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.457955 ), 0.0, 0.0, 0, 0 ]
 
@@ -56,7 +49,6 @@ angle_curve = SubResource( 9 )
 scale = 5.0
 scale_random = 1.0
 scale_curve = SubResource( 11 )
-color_ramp = SubResource( 4 )
 
 [sub_resource type="Curve" id=6]
 _data = [ Vector2( 0, 0 ), 0.0, 4.09545, 0, 0, Vector2( 0.367925, 0.927273 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
@@ -71,6 +63,7 @@ collision_layer = 3
 collision_mask = 3
 physics_material_override = SubResource( 3 )
 gravity_scale = 0.0
+linear_damp = 3.0
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = -10.0
