@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene/Border/Border1.png" type="Texture" id=1]
+[ext_resource path="res://Scene/Border/Border.gd" type="Script" id=2]
+
+[node name="Border" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 289, -262, 268, -289, -263, -289, -288, -274, -288, 266, -270, 290, 252, 292, 290, 263, 312, 312, -311, 312, -311, -311, 312, -311, 312, 312, 290, 263 )
+
+[node name="Spike" type="Area2D" parent="."]
+
+[node name="SpikeCollision" type="CollisionPolygon2D" parent="Spike"]
+polygon = PoolVector2Array( -163, -289, -170, -278, -177, -283, -181, -277, -193, -282, -211, -278, -220, -259, -231, -275, -235, -285, -250, -277, -252, -272, -260, -278, -278, -267, -281, -247, -273, -234, -283, -218, -287, -189, -279, -177, -271, -163, -284, -143, -282, -134, -285, -123, -281, -122, -285, -103, -278, -97, -282, -84, -275, -73, -284, -58, -282, -47, -288, -41, -288, -290 )
+
+[node name="SpikeCollision2" type="CollisionPolygon2D" parent="Spike"]
+polygon = PoolVector2Array( -4, -289, 0, -285, 13, -285, 21, -279, 32, -286, 54, -284, 70, -283, 77, -275, 83, -285, 100, -280, 128, -281, 167, -283, 171, -289 )
+
+[node name="SpikeCollision3" type="CollisionPolygon2D" parent="Spike"]
+polygon = PoolVector2Array( 289, -261, 283, -259, 287, -255, 285, -249, 286, -239, 274, -224, 284, -219, 287, -200, 282, -172, 275, -165, 286, -151, 284, -145, 287, -131, 286, -123, 289, -108 )
+
+[node name="SpikeCollision4" type="CollisionPolygon2D" parent="Spike"]
+polygon = PoolVector2Array( 289, -37, 286, -35, 287, -31, 284, -19, 284, -12, 287, -6, 286, -1, 281, 16, 282, 29, 282, 40, 287, 46, 281, 55, 285, 64, 287, 82, 285, 90, 286, 99, 284, 106, 286, 113, 290, 123, 290, -37 )
+
+[node name="SpikeCollision5" type="CollisionPolygon2D" parent="Spike"]
+polygon = PoolVector2Array( 270, 278, 264, 277, 255, 277, 255, 282, 244, 289, 231, 287, 223, 277, 216, 283, 218, 271, 211, 275, 189, 285, 175, 261, 171, 275, 160, 271, 158, 280, 151, 283, 141, 265, 122, 287, 95, 287, 84, 280, 75, 291, 252, 292 )
+
+[node name="SpikeCollision6" type="CollisionPolygon2D" parent="Spike"]
+polygon = PoolVector2Array( -262, 290, -248, 277, -242, 285, -225, 284, -218, 277, -207, 285, -192, 280, -184, 271, -176, 281, -150, 272, -120, 287, -107, 282, -86, 282, -78, 290 )
+
+[connection signal="body_entered" from="Spike" to="." method="_on_Spike_body_entered"]

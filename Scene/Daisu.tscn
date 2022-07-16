@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Script/Daisu.gd" type="Script" id=1]
@@ -66,6 +67,7 @@ _data = [ Vector2( 0, 0 ), 0.0, 4.09545, 0, 0, Vector2( 0.367925, 0.927273 ), 0.
 offsets = PoolRealArray( 0, 0.464088, 1 )
 colors = PoolColorArray( 0.87676, 0.568054, 0.886719, 1, 0.686598, 0.379501, 0.730469, 1, 0.495921, 0.117416, 0.667969, 1 )
 
+<<<<<<< HEAD
 [sub_resource type="RectangleShape2D" id=14]
 
 [sub_resource type="Curve" id=15]
@@ -104,6 +106,9 @@ scale = 5.0
 scale_random = 1.0
 scale_curve = SubResource( 24 )
 color_ramp = SubResource( 23 )
+=======
+[sub_resource type="RectangleShape2D" id=12]
+>>>>>>> creditFool
 
 [node name="Daisu" type="RigidBody2D"]
 z_index = 1
@@ -111,7 +116,11 @@ collision_layer = 3
 collision_mask = 3
 physics_material_override = SubResource( 3 )
 gravity_scale = 0.0
+<<<<<<< HEAD
 linear_damp = 3.0
+=======
+linear_damp = 1.0
+>>>>>>> creditFool
 script = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
@@ -208,6 +217,7 @@ default_color = Color( 0.4, 0.501961, 1, 1 )
 gradient = SubResource( 7 )
 lenght = 20
 
+<<<<<<< HEAD
 [node name="CollisionDetector" type="Area2D" parent="."]
 visible = false
 
@@ -224,3 +234,11 @@ explosiveness = 1.0
 process_material = SubResource( 21 )
 
 [connection signal="body_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_body_entered"]
+=======
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 12 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+>>>>>>> creditFool
