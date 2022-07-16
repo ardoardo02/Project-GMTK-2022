@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scene/Bar.tscn" type="PackedScene" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.34902, 0.239216, 0.439216, 1 )
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 91.0
 
 [node name="Map" type="Node2D"]
 
@@ -19,3 +29,18 @@ rotation = 1.5708
 [node name="BarBawah" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, -275 )
 rotation = 1.5708
+
+[node name="Lingkaran" type="StaticBody2D" parent="."]
+
+[node name="Panel" type="Panel" parent="Lingkaran"]
+margin_left = -90.0
+margin_top = -90.0
+margin_right = 90.0
+margin_bottom = 90.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lingkaran"]
+shape = SubResource( 2 )
