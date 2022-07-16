@@ -5,7 +5,7 @@ extents = Vector2( 23, 248 )
 
 [node name="BarKiri" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["wall"]]
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
 margin_left = -25.0
