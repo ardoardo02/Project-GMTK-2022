@@ -1,13 +1,12 @@
-extends Node2D
+extends StaticBody2D
 
 
-var hp
+signal damaged
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	hp = 6
-	get_node("Level/Border").connect("damaged", self, "_on_damaged")
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,6 +14,5 @@ func _ready():
 #	pass
 
 
-func _on_damaged():
-	hp -= 1
-	print(hp)
+func _on_Spike_body_entered(body):
+	emit_signal("damaged")

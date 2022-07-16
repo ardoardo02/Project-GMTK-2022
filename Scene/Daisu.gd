@@ -1,13 +1,14 @@
-extends Node2D
+extends RigidBody2D
 
 
-var hp
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	hp = 6
-	get_node("Level/Border").connect("damaged", self, "_on_damaged")
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,6 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_damaged():
-	hp -= 1
-	print(hp)
+func _on_Area2D_area_entered(area):
+	print(area.get_name())
