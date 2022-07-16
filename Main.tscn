@@ -21,9 +21,6 @@ margin_bottom = 600.0
 rect_rotation = 90.0
 texture = SubResource( 2 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
 position = Vector2( 300, 300 )
