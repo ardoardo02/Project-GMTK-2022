@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [sub_resource type="PhysicsMaterial" id=3]
 bounce = 0.8
@@ -9,6 +9,13 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -29,6 +36,73 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Titik" type="Panel" parent="Panel"]
+margin_left = 16.0
+margin_top = 6.0
+margin_right = 31.0
+margin_bottom = 21.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titik2" type="Panel" parent="Panel"]
+margin_left = 28.0
+margin_top = 6.0
+margin_right = 43.0
+margin_bottom = 21.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titik3" type="Panel" parent="Panel"]
+margin_left = 4.0
+margin_top = 6.0
+margin_right = 19.0
+margin_bottom = 21.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titik4" type="Panel" parent="Panel"]
+margin_left = 4.0
+margin_top = 26.0
+margin_right = 19.0
+margin_bottom = 41.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titik5" type="Panel" parent="Panel"]
+margin_left = 16.0
+margin_top = 26.0
+margin_right = 31.0
+margin_bottom = 41.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titik6" type="Panel" parent="Panel"]
+margin_left = 28.0
+margin_top = 26.0
+margin_right = 43.0
+margin_bottom = 41.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 light_mask = 2
 shape = SubResource( 2 )
