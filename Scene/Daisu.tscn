@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="PhysicsMaterial" id=3]
+bounce = 0.8
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.34902, 0.239216, 0.439216, 1 )
@@ -12,6 +15,7 @@ corner_radius_bottom_left = 5
 [node name="Daisu" type="RigidBody2D"]
 collision_layer = 3
 collision_mask = 3
+physics_material_override = SubResource( 3 )
 gravity_scale = 0.0
 
 [node name="Panel" type="Panel" parent="."]

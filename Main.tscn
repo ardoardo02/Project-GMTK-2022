@@ -31,7 +31,7 @@ rotation = 0.523599
 scale = Vector2( 0.6, 0.6 )
 
 [node name="Daisu" parent="." instance=ExtResource( 2 )]
-position = Vector2( 214, 334 )
+position = Vector2( 215, 335 )
 
 [node name="User" parent="." instance=ExtResource( 3 )]
 position = Vector2( 154, 333 )

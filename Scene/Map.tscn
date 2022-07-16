@@ -44,3 +44,67 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lingkaran"]
 shape = SubResource( 2 )
+
+[node name="siku2" type="StaticBody2D" parent="."]
+position = Vector2( -250, -250 )
+
+[node name="ColorRect" type="ColorRect" parent="siku2"]
+margin_top = -28.0
+margin_right = 40.0
+margin_bottom = 12.0
+rect_rotation = 45.0
+color = Color( 0.34902, 0.239216, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="siku2"]
+polygon = PoolVector2Array( -28, 0, 0, -28, 28, 0, 0, 28 )
+
+[node name="siku" type="StaticBody2D" parent="."]
+position = Vector2( 250, -250 )
+
+[node name="ColorRect" type="ColorRect" parent="siku"]
+margin_top = -28.0
+margin_right = 40.0
+margin_bottom = 12.0
+rect_rotation = 45.0
+color = Color( 0.34902, 0.239216, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="siku"]
+polygon = PoolVector2Array( -28, 0, 0, -28, 28, 0, 0, 28 )
+
+[node name="siku4" type="StaticBody2D" parent="."]
+position = Vector2( -250, 250 )
+
+[node name="ColorRect" type="ColorRect" parent="siku4"]
+margin_top = -28.0
+margin_right = 40.0
+margin_bottom = 12.0
+rect_rotation = 45.0
+color = Color( 0.34902, 0.239216, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="siku4"]
+polygon = PoolVector2Array( -28, 0, 0, -28, 28, 0, 0, 28 )
+
+[node name="siku3" type="StaticBody2D" parent="."]
+position = Vector2( 250, 250 )
+
+[node name="ColorRect" type="ColorRect" parent="siku3"]
+margin_top = -28.0
+margin_right = 40.0
+margin_bottom = 12.0
+rect_rotation = 45.0
+color = Color( 0.34902, 0.239216, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="siku3"]
+polygon = PoolVector2Array( -28, 0, 0, -28, 28, 0, 0, 28 )
