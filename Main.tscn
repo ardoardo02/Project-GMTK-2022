@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scene/Map.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Daisu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/User.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.659091 )
+colors = PoolColorArray( 0.541176, 0.937255, 1, 1, 0.996078, 0.862745, 0.960784, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 1024
+
+[node name="Main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 600.0
+margin_right = 1200.0
+margin_bottom = 600.0
+rect_rotation = 90.0
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="."]
+
+[node name="Map" parent="." instance=ExtResource( 1 )]
+position = Vector2( 300, 300 )
+rotation = 0.523599
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Daisu" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, 259 )
+
+[node name="User" parent="." instance=ExtResource( 3 )]
+position = Vector2( 187, 319 )
