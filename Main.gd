@@ -33,6 +33,8 @@ func _on_Daisu_tree_exited():
 
 
 func _on_PlayButton_body_entered(body):
+	$Start/StartSound.play()
+	yield(get_tree().create_timer(1), "timeout")
 	emit_signal("start")
 	$Start/WaktuHapus.start()
 
