@@ -1,16 +1,17 @@
-	[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-	[ext_resource path="res://Scene/PoinPlaces.gd" type="Script" id=1]
-	[ext_resource path="res://Scene/Border/Border.tscn" type="PackedScene" id=2]
-	[ext_resource path="res://Scene/Level.gd" type="Script" id=3]
-	[ext_resource path="res://Scene/Poin/Poin.tscn" type="PackedScene" id=4]
-	[ext_resource path="res://Sound/audio_click sound 3.wav" type="AudioStream" id=5]
-	[ext_resource path="res://Scene/Titik.gd" type="Script" id=6]
+[ext_resource path="res://Scene/PoinPlaces.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Border/Border.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Level.gd" type="Script" id=3]
+[ext_resource path="res://Scene/Poin/Poin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sound/audio_click sound 3.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scene/Titik.gd" type="Script" id=6]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Border" parent="." instance=ExtResource( 2 )]
+rotate = true
 
 [node name="Titik" type="Node2D" parent="."]
 script = ExtResource( 6 )
@@ -29,6 +30,7 @@ position = Vector2( -257, 4.54747e-13 )
 
 [node name="Poin5" parent="Poin" instance=ExtResource( 4 )]
 position = Vector2( -240, -247 )
+
 [node name="Poin21" parent="Poin" instance=ExtResource( 4 )]
 position = Vector2( -230, -237 )
 
@@ -99,14 +101,6 @@ position = Vector2( 143, 146 )
 position = Vector2( -43, 144 )
 
 [node name="Poin3" parent="Poin" instance=ExtResource( 4 )]
-<<<<<<< HEAD
-position = Vector2( 242, -247 )
-
-[node name="PointSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-volume_db = 5.0
-pitch_scale = 1.5
-position = Vector2( 57, 232 )
 
 [node name="Poin9" parent="Poin" instance=ExtResource( 4 )]
 position = Vector2( -129, 230 )
@@ -116,3 +110,8 @@ position = Vector2( 144, 233 )
 
 [node name="Poin11" parent="Poin" instance=ExtResource( 4 )]
 position = Vector2( -39, 230 )
+
+[node name="PointSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 5.0
+pitch_scale = 1.5

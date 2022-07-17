@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-
+export var rotate = false
 signal damaged
 
 
@@ -11,4 +11,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	rotate(delta * 0.3)
+	if rotate:
+		rotate(delta * 0.3)

@@ -29,9 +29,6 @@ grow_vertical = 2
 rect_min_size = Vector2( 10, 10 )
 rect_pivot_offset = Vector2( 5, 5 )
 custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )

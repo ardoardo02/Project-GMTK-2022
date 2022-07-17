@@ -12,8 +12,3 @@ texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 271, 294, -273, 294, -293, 270, -293, -270, -274, -293, 272, -293, 294, -266, 294, 267, 315, 315, 315, -315, -315, -315, -315, 315, 315, 315, 294, 267 )
-
-[node name="DetectKeluar" type="Area2D" parent="."]
-
-[node name="Dinding" type="CollisionPolygon2D" parent="DetectKeluar"]
-polygon = PoolVector2Array( 315, -315, 315, 315, -315, 315, -315, -315, -315, -448, -448, -448, -448, 448, 448, 448, 448, -448, -315, -448, -315, -315 )
