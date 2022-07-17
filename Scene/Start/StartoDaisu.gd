@@ -5,7 +5,7 @@ var max_speed = 700
 
 var EFFECT = preload("res://Scene/BounceParticle.tscn")
 
-var init_pos = Vector2(475, -250)
+var init_pos = Vector2(309, -352)
 
 
 func _ready():

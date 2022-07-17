@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dice.png-56500aa1fb84ad3dd761c4bb3ec97b2e.stex"
+path="res://.import/cursor.png-d840783b6a5d4c33269ee6d9afc0d202.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scene/Start/Dice.png"
-dest_files=[ "res://.import/Dice.png-56500aa1fb84ad3dd761c4bb3ec97b2e.stex" ]
+source_file="res://Scene/Start/cursor.png"
+dest_files=[ "res://.import/cursor.png-d840783b6a5d4c33269ee6d9afc0d202.stex" ]
 
 [params]
 
