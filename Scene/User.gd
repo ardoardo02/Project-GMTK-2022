@@ -5,6 +5,7 @@ func _physics_process(delta):
 	if Input.is_mouse_button_pressed(1):
 		visible = true
 		get_node("Collision").disabled = false
+		get_node("AreaCursor/CollisionArea").disabled = false
 		position = get_global_mouse_position()
 		
 		var diameter = get_node("Collision").shape.radius * 2
@@ -15,6 +16,7 @@ func _physics_process(delta):
 	else:
 		visible = false
 		get_node("Collision").disabled = true
+		get_node("AreaCursor/CollisionArea").disabled = true	
 		get_node("Texture").rect_min_size = Vector2(10, 10)
 		get_node("Collision").shape.radius = 5
 	
