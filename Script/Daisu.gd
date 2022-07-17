@@ -44,6 +44,10 @@ func _on_CollisionDetector_area_entered(area):
 		#print(global_position)
 		global_position = Vector2(180, 320)
 	
+	if "Poin" in area.get_name():
+		if hp < 6:
+			hp += 1
+		
 	if area.get_name() == "AreaCursor":
 		counter += 1
 		hp -= 1
@@ -51,7 +55,9 @@ func _on_CollisionDetector_area_entered(area):
 		if hp <= 0:
 			$Timer.start()
 		
-		get_node("Body").set_mata(hp)
+	get_node("Body").set_mata(hp)
+	
+	
 
 
 func _on_Timer_timeout():

@@ -20,15 +20,33 @@ func set_dot_layout(n:int):
 	if n >= 0 and n <= 5:
 		$Titik.add_child(dot_scene[n].instance())
 
+
+func set_next_level():
+	current_level += 1
+	set_dot_layout(current_level)
+	$Poin.reset_poin()
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_parent().connect("dice_reset", self, "_on_dice_reset")
 	set_dot_layout(current_level)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	rotate(delta * 0.3)
+	pass
 
 
 func _on_Poin_tree_exited():
 	set_dot_layout(1)
+
+
+func _on_dice_reset():
+	$Poin.reset_poin()
+	#print("saya cinta kokoro")
+
+
+func _on_level_complete():
+	set_next_level()
+	print("Wuv Kokoron")

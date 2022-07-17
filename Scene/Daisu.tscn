@@ -134,6 +134,9 @@ stream = ExtResource( 4 )
 volume_db = -8.0
 pitch_scale = 4.0
 
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="area_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_area_entered"]
 [connection signal="body_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

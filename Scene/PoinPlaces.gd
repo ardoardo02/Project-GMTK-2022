@@ -4,14 +4,14 @@ extends Node2D
 signal complete
 
 var coordinates = [
-	Vector2(-232, 244),
-	Vector2(-20, 157),
-	Vector2(244, -255),
-	Vector2(254, 244),
-	Vector2(-240, -247),
-	Vector2(14, -151),
-	Vector2(209, -13),
-	Vector2(-201, 24),	
+	#Vector2(-232, 244),
+	#Vector2(-20, 157),
+	#Vector2(244, -255),
+	#Vector2(254, 244),
+	#Vector2(-240, -247),
+	#Vector2(14, -151),
+	#Vector2(209, -13),
+	#Vector2(-201, 24),	
 ]
 
 var Poin = preload("res://Scene/Poin/Poin.tscn") 
@@ -43,13 +43,31 @@ func set_poin():
 	for coordinate in places:
 		var poin = Poin.instance()
 		poin.global_position = coordinates[coordinate]
-		poin.connect("tree_exited", self, "_on_Poin_hit")
+		poin.connect("hit", self, "_on_Poin_hit")
+		#poin.connect("tree_exited", self, )
 		add_child(poin)
 
 
+func reset_poin():
+	pick_places(6)
+	set_poin()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pick_places(3)
+	connect("complete", get_parent(), "_on_level_complete")
+	
+	for x in range(-230, 230, 50):
+		for y in range(-230, 230, 50):
+			if get_parent().current_level in [0, 2, 4]:
+				print("gak ada di tengah")
+				if ((x < -140) or (x > 140)) and ((y < -140) or (y > 140)):
+					coordinates.append(Vector2(x, y))
+			else:
+				print("harusnya ada di tengah")
+				coordinates.append(Vector2(x, y))
+			
+	
+	pick_places(6)
 	set_poin()
 
 

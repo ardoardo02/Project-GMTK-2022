@@ -9,14 +9,17 @@ func _ready():
 
 
 func _process(delta):
-	rotate(delta * -0.3)
+	#rotate(delta * -0.3)
+	pass
 
 
 func _on_Poin_body_entered(body):
 	if body.get_name() == "Daisu":
+		emit_signal("hit")		
 		queue_free()
 
 
 func _on_Poin_tree_exited():
-	emit_signal("hit")
+	#emit_signal("hit")
 	#print("signal send")
+	pass
