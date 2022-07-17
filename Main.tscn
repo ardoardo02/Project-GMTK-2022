@@ -50,6 +50,7 @@ scale = Vector2( 0.05, 0.05 )
 position = Vector2( 300, 300 )
 rotation = 0.523599
 scale = Vector2( 0.6, 0.6 )
+
 [node name="Label" type="Label" parent="."]
 margin_left = 296.0
 margin_top = 294.0
