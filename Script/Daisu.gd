@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-signal hit_wall
+#signal hit_wall
 var max_speed = 700
 
 var counter = 0
@@ -20,11 +20,14 @@ func _process(delta):
 
 
 func _on_CollisionDetector_body_entered(body):
-	if body.is_in_group('wall'):
-		emit_signal("hit_wall")
+#	if body.is_in_group('wall'):
+#		emit_signal("hit_wall")
 	
-	if body.get_name() == "Border" or body.get_name() == "Dot":
-		emit_signal("hit_wall")
+	if body.get_name() == "Border" or body.get_name().begins_with("Dot"):
+		var effect = EFFECT.instance()
+		effect.global_position = global_position
+		get_parent().add_child(effect)
+#		emit_signal("hit_wall")
 	
 	#print(body.get_name())
 

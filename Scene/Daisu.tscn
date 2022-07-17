@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Script/Daisu.gd" type="Script" id=1]
 [ext_resource path="res://Scene/DiceTrail.tscn" type="PackedScene" id=2]
@@ -22,37 +22,12 @@ min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.48913, -123.545 ), 0.0, 0.0, 0, 0, Vector2( 1, 72.8182 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
-curve = SubResource( 8 )
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.457955 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=12]
 offsets = PoolRealArray( 0, 0.478261, 1 )
 colors = PoolColorArray( 0.436896, 0.0727844, 0.621094, 1, 0.686312, 0.228882, 0.78125, 1, 0.722656, 0.426254, 0.676343, 1 )
-
-[sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 12 )
-
-[sub_resource type="Curve" id=10]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.457955 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=11]
-curve = SubResource( 10 )
-
-[sub_resource type="ParticlesMaterial" id=5]
-emission_shape = 2
-emission_box_extents = Vector3( 10, 1, 1 )
-flag_disable_z = true
-direction = Vector3( 1, 1, 0 )
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-angle = 30.0
-angle_random = 1.0
-angle_curve = SubResource( 9 )
-scale = 5.0
-scale_random = 1.0
-scale_curve = SubResource( 11 )
-color_ramp = SubResource( 13 )
 
 [sub_resource type="Curve" id=6]
 _data = [ Vector2( 0, 0 ), 0.0, 4.09545, 0, 0, Vector2( 0.367925, 0.927273 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
@@ -69,37 +44,12 @@ min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, 18.8182 ), 0.0, 0.0, 0, 0, Vector2( 0.472826, 247.909 ), 0.0, 0.0, 0, 0, Vector2( 1, 84.2727 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=22]
-curve = SubResource( 15 )
+[sub_resource type="Curve" id=19]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=17]
 offsets = PoolRealArray( 0, 0.335404, 0.583851, 1 )
 colors = PoolColorArray( 0.766602, 0.420461, 0.182667, 1, 0.788824, 0.480355, 0.304358, 1, 0.829102, 0.0939217, 0.684076, 1, 0.975586, 0.897022, 0.87056, 1 )
-
-[sub_resource type="GradientTexture" id=23]
-gradient = SubResource( 17 )
-
-[sub_resource type="Curve" id=19]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=24]
-curve = SubResource( 19 )
-
-[sub_resource type="ParticlesMaterial" id=21]
-emission_shape = 1
-emission_sphere_radius = 5.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 50.0
-initial_velocity_random = 0.5
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-angle_curve = SubResource( 22 )
-scale = 5.0
-scale_random = 1.0
-scale_curve = SubResource( 24 )
-color_ramp = SubResource( 23 )
 
 [node name="Daisu" type="RigidBody2D"]
 z_index = 1
@@ -121,19 +71,26 @@ margin_bottom = 30.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2
 shape = SubResource( 2 )
 
-[node name="Particles2D" type="Particles2D" parent="."]
+[node name="Particles2D" type="CPUParticles2D" parent="."]
 z_index = -1
 local_coords = false
 draw_order = 1
-process_material = SubResource( 5 )
+emission_shape = 2
+emission_rect_extents = Vector2( 10, 1 )
+direction = Vector2( 1, 1 )
+gravity = Vector2( 0, 0 )
+angle = 30.0
+angle_random = 1.0
+angle_curve = SubResource( 8 )
+scale_amount = 5.0
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 10 )
+color_ramp = SubResource( 12 )
 
 [node name="Trail2D" parent="." instance=ExtResource( 2 )]
 show_behind_parent = true
@@ -151,12 +108,22 @@ modulate = Color( 0.117647, 0.631373, 0.0862745, 1 )
 scale = Vector2( 1.03, 1.03 )
 shape = SubResource( 14 )
 
-[node name="BounceParticle" type="Particles2D" parent="."]
+[node name="BounceParticle" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 10
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 21 )
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 0.5
+angle_curve = SubResource( 15 )
+scale_amount = 5.0
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 19 )
+color_ramp = SubResource( 17 )
 
 [node name="Timer" type="Timer" parent="."]
 

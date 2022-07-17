@@ -33,6 +33,7 @@ position = Vector2( 260, 400 )
 
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 154, 333 )
+z_index = 5
 
 [node name="Poin" parent="." instance=ExtResource( 4 )]
 position = Vector2( 334, 431 )
@@ -57,9 +58,6 @@ margin_top = 294.0
 margin_right = 306.0
 margin_bottom = 310.0
 text = "o"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Offside" type="Area2D" parent="."]
 
