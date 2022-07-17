@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scene/PoinPlaces.gd" type="Script" id=1]
 [ext_resource path="res://Scene/Border/Border.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scene/Level.gd" type="Script" id=3]
-[ext_resource path="res://Scene/Poin/Poin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sound/audio_click sound 3.wav" type="AudioStream" id=5]
 [ext_resource path="res://Scene/Titik.gd" type="Script" id=6]
 
@@ -18,98 +17,6 @@ script = ExtResource( 6 )
 
 [node name="Poin" type="Node2D" parent="."]
 script = ExtResource( 1 )
-
-[node name="Poin2" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 250, 1 )
-
-[node name="Poin" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 44, -235 )
-
-[node name="Poin4" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -257, 4.54747e-13 )
-
-[node name="Poin5" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -240, -247 )
-
-[node name="Poin21" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -230, -237 )
-
-[node name="Poin19" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -140, 0 )
-
-[node name="Poin20" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 150, -1 )
-
-[node name="Poin6" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -140, -235 )
-
-[node name="Poin7" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 134, -233 )
-
-[node name="Poin22" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 230, -234 )
-
-[node name="Poin23" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 252, 248 )
-
-[node name="Poin24" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -241, 250 )
-
-[node name="Poin8" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -52, -235 )
-
-[node name="Poin5" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 45, -147 )
-
-[node name="Poin12" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -139, -147 )
-
-[node name="Poin25" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -91, -99 )
-
-[node name="Poin29" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 0, -140 )
-
-[node name="Poin30" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 2, 124 )
-
-[node name="Poin26" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 92, -89 )
-
-[node name="Poin27" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 84, 95 )
-
-[node name="Poin28" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -81, 98 )
-
-[node name="Poin13" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 135, -145 )
-
-[node name="Poin14" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -51, -147 )
-
-[node name="Poin15" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 53, 144 )
-
-[node name="Poin16" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -131, 144 )
-
-[node name="Poin17" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 143, 146 )
-
-[node name="Poin18" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -43, 144 )
-
-[node name="Poin3" parent="Poin" instance=ExtResource( 4 )]
-
-[node name="Poin9" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -129, 230 )
-
-[node name="Poin10" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( 144, 233 )
-
-[node name="Poin11" parent="Poin" instance=ExtResource( 4 )]
-position = Vector2( -39, 230 )
 
 [node name="PointSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

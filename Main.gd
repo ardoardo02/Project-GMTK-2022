@@ -2,6 +2,7 @@ extends Node2D
 
 
 signal dice_reset
+signal start
 
 var hp
 var counter = 0
@@ -29,3 +30,12 @@ func _on_Daisu_tree_exited():
 	daisu.global_position = Vector2(260, 400)
 	add_child(daisu)
 	get_node("Daisu").connect("tree_exited", self, "_on_Daisu_tree_exited")
+
+
+func _on_PlayButton_body_entered(body):
+	emit_signal("start")
+	$Start/WaktuHapus.start()
+
+
+func _on_Timer_timeout():
+	$Start.queue_free()

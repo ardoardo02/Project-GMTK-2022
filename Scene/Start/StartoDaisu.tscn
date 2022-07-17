@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scene/Start/StartoDaisu.gd" type="Script" id=1]
 [ext_resource path="res://Scene/DiceTrail.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scene/MataDadu/6.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/MataDadu/1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sound/zapsplat_sound_design_hit_punchy_bright_71725.wav" type="AudioStream" id=4]
 
 [sub_resource type="PhysicsMaterial" id=3]

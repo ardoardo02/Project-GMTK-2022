@@ -18,7 +18,7 @@ func _process(delta):
 		new_speed *= max_speed
 		set_linear_velocity(new_speed)
 	
-	if global_position[0] > 0 or global_position[1] > 600 or global_position[0] < 0 or global_position[1] < -600:
+	if global_position[0] > 600 or global_position[1] > 0 or global_position[0] < 0 or global_position[1] < -600:
 		global_position = init_pos
 
 

@@ -28,14 +28,14 @@ script = ExtResource( 5 )
 [node name="Start" type="Node2D" parent="."]
 
 [node name="Background" type="TextureRect" parent="Start"]
-margin_left = 600.0
-margin_top = -600.0
-margin_right = 1200.0
-rect_rotation = 90.0
+margin_right = 600.0
+margin_bottom = 600.0
+rect_rotation = 270.0
 texture = SubResource( 2 )
 expand = true
 
 [node name="Border" parent="Start" instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 300, -300 )
 scale = Vector2( 0.96, 0.96 )
 
@@ -84,6 +84,14 @@ expand = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start/PlayButton"]
 polygon = PoolVector2Array( 271, -179, 339, -139, 343, -131, 339, -123, 271, -84, 261, -85, 257, -92, 257, -170, 261, -177 )
 
+[node name="StartoDaisu" parent="Start" instance=ExtResource( 13 )]
+position = Vector2( 450, -250 )
+continuous_cd = 1
+
+[node name="WaktuHapus" type="Timer" parent="Start"]
+wait_time = 3.0
+one_shot = true
+
 [node name="Background" type="TextureRect" parent="."]
 margin_left = 600.0
 margin_right = 1200.0
@@ -114,8 +122,6 @@ pitch_scale = 1.5
 
 [node name="CameraBody" parent="." instance=ExtResource( 6 )]
 
-[node name="Daisu2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 450, -250 )
-continuous_cd = 1
-
+[connection signal="tree_exited" from="Start" to="." method="_on_Start_tree_exited"]
+[connection signal="body_entered" from="Start/PlayButton" to="." method="_on_PlayButton_body_entered"]
 [connection signal="tree_exited" from="Daisu" to="." method="_on_Daisu_tree_exited"]
