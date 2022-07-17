@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="Mata" type="Node2D"]
+
+[node name="Titik5" type="Panel" parent="."]
+margin_left = 28.0
+margin_top = 26.0
+margin_right = 43.0
+margin_bottom = 41.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titik4" type="Panel" parent="."]
+margin_left = 4.0
+margin_top = 26.0
+margin_right = 19.0
+margin_bottom = 41.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titik3" type="Panel" parent="."]
+margin_left = 4.0
+margin_top = 6.0
+margin_right = 19.0
+margin_bottom = 21.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titik2" type="Panel" parent="."]
+margin_left = 28.0
+margin_top = 6.0
+margin_right = 43.0
+margin_bottom = 21.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

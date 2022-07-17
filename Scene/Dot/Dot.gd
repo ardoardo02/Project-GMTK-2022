@@ -15,4 +15,5 @@ func _ready():
 
 
 func _on_Spike_body_entered(body):
-	emit_signal("damaged")
+	#emit_signal("damaged")
+	pass

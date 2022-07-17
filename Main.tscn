@@ -24,10 +24,12 @@ margin_bottom = 600.0
 rect_rotation = 90.0
 texture = SubResource( 2 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Daisu" parent="." instance=ExtResource( 2 )]
-position = Vector2( 215, 335 )
-can_sleep = false
+position = Vector2( 260, 400 )
 
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 154, 333 )
@@ -48,3 +50,20 @@ scale = Vector2( 0.05, 0.05 )
 [node name="Poin3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 399, 273 )
 scale = Vector2( 0.05, 0.05 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 296.0
+margin_top = 294.0
+margin_right = 306.0
+margin_bottom = 310.0
+text = "o"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Offside" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Offside"]
+polygon = PoolVector2Array( 0, 600, -172, 748, 799, 756, 786, -145, -182, -156, -172, 748, 0, 600, -3, -1, 600, 0, 600, 598 )
+
+[connection signal="tree_exited" from="Daisu" to="." method="_on_Daisu_tree_exited"]
