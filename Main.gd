@@ -3,6 +3,7 @@ extends Node2D
 
 signal dice_reset
 signal start
+#signal habis
 
 var hp
 var counter = 0
@@ -11,9 +12,11 @@ var counter = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#$Daisu.connect("hit_wall", self, "on_dice_hit_wall")
+#	$Daisu.connect("end", self, "on_end_game")
 	hp = 6
 
+#func on_end_game():
+#	emit_signal("habis")
 
 #func on_dice_hit_wall():
 #	var effect = EFFECT.instance()

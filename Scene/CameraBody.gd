@@ -4,12 +4,18 @@ export (int) var speed = 500
 
 var velocity = Vector2()
 var gameStart = false
+var gameEnd = false
 
 func _ready():
 	var startSignal = get_parent().connect("start", self, "on_start_game")
+#	var endSignal = get_parent().connect("habis", self, "on_end_game")
 
 func on_start_game():
 	gameStart = true
+#
+#func on_end_game():
+#	print("mengakhiri permainan")
+#	gameEnd = true
 
 #func get_input():
 #	velocity = Vector2()
@@ -25,11 +31,14 @@ func on_start_game():
 #	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
-	if gameStart == true:
+	if gameStart == true or gameEnd == true:
 		velocity = Vector2()
-		if position.y > 300:
+		if position.y > 300 and gameStart:
 			velocity.y -= 20
 			gameStart = false
+		if position.y > 900 and gameEnd:
+			velocity.y -= 20
+			gameEnd = false
 		velocity.y += 20
 		velocity = velocity.normalized() * speed
 #

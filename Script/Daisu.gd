@@ -1,11 +1,15 @@
 extends RigidBody2D
 
 #signal hit_wall
+#signal end
+
 var max_speed = 700
 
 var counter = 0
 var hp = 6
 var EFFECT = preload("res://Scene/BounceParticle.tscn")
+
+var debounceTanah = false
 
 var init_pos = Vector2(300, 450)
 var check_offside = true
@@ -36,6 +40,12 @@ func _on_CollisionDetector_body_entered(body):
 		$BounceSound.play()
 		get_parent().add_child(effect)
 #		emit_signal("hit_wall")
+	if body.get_name() == "tanah" and !debounceTanah:
+		debounceTanah = true
+		var effect = EFFECT.instance()
+		effect.global_position = global_position
+		$BounceSound.play()
+		get_parent().add_child(effect)
 	
 	#print(body.get_name())
 
@@ -85,4 +95,7 @@ func _on_JadiMerah_timeout():
 
 func _on_Level_add_gravity():
 	gravity_scale = 1
+#	bounce = 0
 	check_offside = false
+	$Kamera.current = true
+#	emit_signal("end")

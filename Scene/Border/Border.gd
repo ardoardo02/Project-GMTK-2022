@@ -14,8 +14,8 @@ func _ready():
 func _process(delta):
 	#if get_parent().current_level == 6:
 		#queue_free()
-		
-	rotate(delta * speed)
+	if rotate:
+		rotate(delta * speed)
 
 
 func _on_FinishTimer_timeout():
