@@ -47,17 +47,32 @@ func _on_CollisionDetector_area_entered(area):
 	if "Poin" in area.get_name():
 		if hp < 6:
 			hp += 1
+			get_node("Body").set_mata(hp)
 		
+		if not($Timer.is_stopped()):
+			$Timer.stop()
+	
+	if "Spike" in area.get_name():
+		hp -= 1
+		$JadiMerah.start()
+		$Body.get_stylebox("panel", "").set_bg_color(Color("#f11414"))
+		get_node("Body").set_mata(hp)
+		
+		#$Body.get_stylebox("panel", "").update()
+	
 	if area.get_name() == "AreaCursor":
 		counter += 1
-		hp -= 1
 		
-		if hp <= 0:
+		if $Cooldown.is_stopped():
+			$Cooldown.start()
+			hp -= 1
+			get_node("Body").set_mata(hp)
+		
+		
+	if hp <= 0:
+		if $Timer.is_stopped():
 			$Timer.start()
 		
-	get_node("Body").set_mata(hp)
-	
-	
 
 
 func _on_Timer_timeout():
@@ -65,3 +80,8 @@ func _on_Timer_timeout():
 	effect.global_position = global_position
 	get_parent().add_child(effect)
 	queue_free()
+
+
+func _on_JadiMerah_timeout():
+	$Body.get_stylebox("panel", "").set_bg_color(Color("#593d70"))
+

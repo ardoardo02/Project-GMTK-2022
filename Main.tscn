@@ -35,10 +35,13 @@ continuous_cd = 1
 [node name="Level" parent="." instance=ExtResource( 1 )]
 position = Vector2( 300, 300 )
 scale = Vector2( 0.6, 0.6 )
-current_level = 4
+current_level = 6
 
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 154, 333 )
+
+[node name="Daisu2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 232, 332 )
 
 [node name="Offside" type="Area2D" parent="."]
 
