@@ -1,6 +1,8 @@
 extends Node2D
 
 
+signal dice_reset
+
 var hp
 var counter = 0
 
@@ -19,8 +21,11 @@ func _ready():
 
 
 func _on_Daisu_tree_exited():
+	emit_signal("dice_reset")
+	
 	var DAISU = load("res://Scene/Daisu.tscn")
 	var daisu = DAISU.instance()
 	daisu.global_position = Vector2(260, 400)
+	daisu.connect("hit_wall", self, "_on_dice_hit_wall")
 	add_child(daisu)
 	get_node("Daisu").connect("tree_exited", self, "_on_Daisu_tree_exited")

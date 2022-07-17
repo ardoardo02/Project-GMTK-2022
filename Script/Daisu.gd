@@ -7,9 +7,11 @@ var counter = 0
 var hp = 6
 var EFFECT = preload("res://Scene/BounceParticle.tscn")
 
+var init_pos = Vector2(300, 450)
+
 
 func _ready():
-	global_position = Vector2(260, 400)
+	global_position = Vector2(300, 450)
 	
 
 func _process(delta):
@@ -17,6 +19,9 @@ func _process(delta):
 		var new_speed = get_linear_velocity().normalized()
 		new_speed *= max_speed
 		set_linear_velocity(new_speed)
+	
+	if abs(global_position[0]) > 600 or abs(global_position[1]) > 600:
+		global_position = Vector2(300, 450)
 
 
 func _on_CollisionDetector_body_entered(body):
@@ -41,7 +46,6 @@ func _on_CollisionDetector_area_entered(area):
 	if area.get_name() == "AreaCursor":
 		counter += 1
 		hp -= 1
-		get_parent().get_node("Label").text = str(counter)
 		
 		if hp <= 0:
 			$Timer.start()

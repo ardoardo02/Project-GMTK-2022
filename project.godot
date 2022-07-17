@@ -21,6 +21,8 @@ window/size/width=600
 [physics]
 
 common/enable_pause_aware_picking=true
+2d/physics_engine="GodotPhysics"
+2d/bvh_collision_margin=5.0
 
 [rendering]
 
