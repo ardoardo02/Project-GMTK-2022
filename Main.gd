@@ -2,6 +2,7 @@ extends Node2D
 
 
 var hp
+var counter = 0
 
 var EFFECT = preload("res://Scene/BounceParticle.tscn")
 
@@ -9,18 +10,17 @@ var EFFECT = preload("res://Scene/BounceParticle.tscn")
 func _ready():
 	$Daisu.connect("hit_wall", self, "on_dice_hit_wall")
 	hp = 6
-	get_node("Level/Border").connect("damaged", self, "_on_damaged")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func on_dice_hit_wall():
 	var effect = EFFECT.instance()
 	add_child(effect)
 	effect.global_position = Vector2($Daisu.position)
 
-func _on_damaged():
-	hp -= 1
-	print(hp)
+
+func _on_Daisu_tree_exited():
+	var DAISU = load("res://Scene/Daisu.tscn")
+	var daisu = DAISU.instance()
+	daisu.global_position = Vector2(260, 400)
+	add_child(daisu)
+	get_node("Daisu").connect("tree_exited", self, "_on_Daisu_tree_exited")

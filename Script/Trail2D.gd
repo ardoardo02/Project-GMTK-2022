@@ -5,6 +5,10 @@ export var lenght = 50
 var point = Vector2()
 
 
+func _ready():
+	clear_points()
+	
+
 func _process(delta):
 	global_position = Vector2(0,0)
 	global_rotation = 0
