@@ -40,9 +40,6 @@ current_level = 6
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 154, 333 )
 
-[node name="Daisu2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 232, 332 )
-
 [node name="Offside" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Offside"]
