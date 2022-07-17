@@ -4,6 +4,7 @@ extends RigidBody2D
 #signal end
 
 var max_speed = 700
+var immortal = false
 
 var counter = 0
 var hp = 6
@@ -58,22 +59,23 @@ func _on_CollisionDetector_area_entered(area):
 		
 		if not($Timer.is_stopped()):
 			$Timer.stop()
-	
-	if "Spike" in area.get_name():
-		hp -= 1
-		$JadiMerah.start()
-		$Body.get_stylebox("panel", "").set_bg_color(Color("#f11414"))
-		get_node("Body").set_mata(hp)
+
+	if not immortal:
+		if "Spike" in area.get_name():
+			hp -= 1
+			$JadiMerah.start()
+			$Body.get_stylebox("panel", "").set_bg_color(Color("#f11414"))
+			get_node("Body").set_mata(hp)
 		
 		#$Body.get_stylebox("panel", "").update()
 	
-	if area.get_name() == "AreaCursor":
-		counter += 1
+		if area.get_name() == "AreaCursor":
+			counter += 1
 		
-		if $Cooldown.is_stopped():
-			$Cooldown.start()
-			hp -= 1
-			get_node("Body").set_mata(hp)
+			if $Cooldown.is_stopped():
+				$Cooldown.start()
+				hp -= 1
+				get_node("Body").set_mata(hp)
 		
 		
 	if hp <= 0:
@@ -98,4 +100,5 @@ func _on_Level_add_gravity():
 #	bounce = 0
 	check_offside = false
 	$Kamera.current = true
+	get_parent().get_node("Cursor").disable = true
 #	emit_signal("end")

@@ -57,6 +57,7 @@ func _on_level_complete():
 			$Border.speed = 0
 			emit_signal("add_gravity")
 			$FinishTimer.start()
+			get_node("Border/Spike").queue_free()
 
 
 func _on_FinishTimer_timeout():

@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
+var disable = false
 
 func _physics_process(delta):
-	if Input.is_mouse_button_pressed(1):
+	if Input.is_mouse_button_pressed(1) and not disable:
 		visible = true
 		get_node("Collision").disabled = false
 		get_node("AreaCursor/CollisionArea").disabled = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scene/NewLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Daisu.tscn" type="PackedScene" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://Scene/Start/cursor.png" type="Texture" id=15]
 [ext_resource path="res://Scene/Start/arah panah.png" type="Texture" id=16]
 [ext_resource path="res://Scene/Start/order.png" type="Texture" id=17]
+[ext_resource path="res://image/unknown.png" type="Texture" id=18]
+[ext_resource path="res://image/thankyou.png" type="Texture" id=19]
+[ext_resource path="res://image/Logo.png" type="Texture" id=20]
 
 [sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.644231 )
@@ -153,7 +156,6 @@ expand = true
 [node name="Level" parent="." instance=ExtResource( 1 )]
 position = Vector2( 300, 300 )
 scale = Vector2( 0.6, 0.6 )
-current_level = 5
 
 [node name="Daisu" parent="." instance=ExtResource( 2 )]
 position = Vector2( 309, 430 )
@@ -184,6 +186,9 @@ margin_bottom = 1199.0
 rect_rotation = 90.0
 texture = SubResource( 5 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="tanah" type="StaticBody2D" parent="Outro"]
 position = Vector2( 0, 1100 )
@@ -197,6 +202,21 @@ expand = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Outro/tanah"]
 position = Vector2( 300, 64 )
 shape = SubResource( 8 )
+
+[node name="Thankyou" type="Sprite" parent="."]
+position = Vector2( 300, 800 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 19 )
+
+[node name="Unknown" type="Sprite" parent="."]
+position = Vector2( 102, 1148 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 18 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 553, 1149 )
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 20 )
 
 [connection signal="tree_exited" from="Start" to="." method="_on_Start_tree_exited"]
 [connection signal="body_entered" from="Start/PlayButton" to="." method="_on_PlayButton_body_entered"]
