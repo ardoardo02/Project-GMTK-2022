@@ -55,6 +55,7 @@ func _ready():
 
 func _on_Poin_hit():
 	poin2complete -= 1
+	get_parent().get_node("PointSound").play()
 	print(poin2complete)
 	
 	if poin2complete == 0:

@@ -20,7 +20,7 @@ func _process(delta):
 		new_speed *= max_speed
 		set_linear_velocity(new_speed)
 	
-	if abs(global_position[0]) > 600 or abs(global_position[1]) > 600:
+	if global_position[0] > 600 or global_position[1] > 600 or global_position[0] < 0 or global_position[1] < 0:
 		global_position = Vector2(300, 450)
 
 
@@ -31,6 +31,7 @@ func _on_CollisionDetector_body_entered(body):
 	if body.get_name() == "Border" or body.get_name().begins_with("Dot"):
 		var effect = EFFECT.instance()
 		effect.global_position = global_position
+		$BounceSound.play()
 		get_parent().add_child(effect)
 #		emit_signal("hit_wall")
 	

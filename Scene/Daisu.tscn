@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Script/Daisu.gd" type="Script" id=1]
 [ext_resource path="res://Scene/DiceTrail.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scene/MataDadu/Body.gd" type="Script" id=3]
+[ext_resource path="res://Sound/zapsplat_sound_design_hit_punchy_bright_71725.wav" type="AudioStream" id=4]
 
 [sub_resource type="PhysicsMaterial" id=3]
 friction = 0.0
@@ -127,6 +128,11 @@ scale_amount_curve = SubResource( 19 )
 color_ramp = SubResource( 17 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="BounceSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -8.0
+pitch_scale = 4.0
 
 [connection signal="area_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_area_entered"]
 [connection signal="body_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_body_entered"]
