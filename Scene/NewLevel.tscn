@@ -25,9 +25,14 @@ script = ExtResource( 1 )
 wait_time = 6.0
 autostart = true
 
+[node name="FinishTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="PointSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = 5.0
 pitch_scale = 1.5
 
 [connection signal="timeout" from="SpikeTimer" to="Border/Spike" method="_on_Timer_timeout"]
+[connection signal="timeout" from="FinishTimer" to="." method="_on_FinishTimer_timeout"]
+[connection signal="timeout" from="FinishTimer" to="Border" method="_on_FinishTimer_timeout"]
