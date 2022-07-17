@@ -1,6 +1,7 @@
 extends Node2D
 
 
+signal add_gravity
 export var current_level = 0
 
 var dot_scene = [
@@ -43,10 +44,20 @@ func _on_Poin_tree_exited():
 
 
 func _on_dice_reset():
-	$Poin.reset_poin()
+	if current_level != 6:
+		$Poin.reset_poin()
 	#print("saya cinta kokoro")
 
 
 func _on_level_complete():
 	set_next_level()
-	print("Wuv Kokoron")
+	
+	if current_level == 6:
+		if $FinishTimer.is_stopped():
+			$Border.speed = 0
+			emit_signal("add_gravity")
+			$FinishTimer.start()
+
+
+func _on_FinishTimer_timeout():
+	print("Ayo nikah Kokoro")

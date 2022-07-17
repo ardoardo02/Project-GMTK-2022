@@ -16,7 +16,7 @@
 [ext_resource path="res://Sound/audio_gamestart.wav" type="AudioStream" id=14]
 
 [sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0, 0.659091 )
+offsets = PoolRealArray( 0, 0.644231 )
 colors = PoolColorArray( 0.541176, 0.937255, 1, 1, 0.996078, 0.862745, 0.960784, 1 )
 
 [sub_resource type="GradientTexture" id=2]
@@ -120,13 +120,14 @@ rect_rotation = 90.0
 texture = SubResource( 2 )
 expand = true
 
-[node name="Daisu" parent="." instance=ExtResource( 2 )]
-position = Vector2( 309, 430 )
-continuous_cd = 1
-
 [node name="Level" parent="." instance=ExtResource( 1 )]
 position = Vector2( 300, 300 )
 scale = Vector2( 0.6, 0.6 )
+current_level = 5
+
+[node name="Daisu" parent="." instance=ExtResource( 2 )]
+position = Vector2( 309, 430 )
+continuous_cd = 1
 
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 154, 333 )

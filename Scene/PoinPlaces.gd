@@ -20,6 +20,10 @@ var places = []
 var poin2complete = 0
 
 
+func _process(delta):
+	if get_parent().current_level == 6:
+		queue_free()
+
 func pick_places(n:int):
 	var rng = RandomNumberGenerator.new()
 	places = []

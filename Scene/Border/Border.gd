@@ -3,6 +3,7 @@ extends StaticBody2D
 export var rotate = false
 signal damaged
 
+var speed = 0.3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,5 +12,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if rotate:
-		rotate(delta * 0.3)
+	#if get_parent().current_level == 6:
+		#queue_free()
+		
+	rotate(delta * speed)
+
+
+func _on_FinishTimer_timeout():
+	queue_free()
+	print("yay")

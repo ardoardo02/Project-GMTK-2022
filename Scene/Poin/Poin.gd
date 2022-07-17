@@ -9,8 +9,8 @@ func _ready():
 
 
 func _process(delta):
-	#rotate(delta * -0.3)
-	pass
+	rotate(delta * -1)
+	#pass
 
 
 func _on_Poin_body_entered(body):

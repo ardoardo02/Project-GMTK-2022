@@ -8,10 +8,11 @@ var hp = 6
 var EFFECT = preload("res://Scene/BounceParticle.tscn")
 
 var init_pos = Vector2(300, 450)
-
+var check_offside = true
 
 func _ready():
 	global_position = Vector2(300, 450)
+	get_parent().get_node("Level").connect("add_gravity", self, "_on_Level_add_gravity")
 	
 
 func _process(delta):
@@ -20,8 +21,9 @@ func _process(delta):
 		new_speed *= max_speed
 		set_linear_velocity(new_speed)
 	
-	if global_position[0] > 600 or global_position[1] > 600 or global_position[0] < 0 or global_position[1] < 0:
-		global_position = Vector2(300, 450)
+	if check_offside:
+		if global_position[0] > 600 or global_position[1] > 600 or global_position[0] < 0 or global_position[1] < 0:
+			global_position = Vector2(300, 450)
 
 
 func _on_CollisionDetector_body_entered(body):
@@ -39,25 +41,35 @@ func _on_CollisionDetector_body_entered(body):
 
 
 func _on_CollisionDetector_area_entered(area):
-	print(area.get_name())
-	if area.get_name() == "Offside":
-		#print(global_position)
-		global_position = Vector2(180, 320)
-	
 	if "Poin" in area.get_name():
 		if hp < 6:
 			hp += 1
+			get_node("Body").set_mata(hp)
 		
+		if not($Timer.is_stopped()):
+			$Timer.stop()
+	
+	if "Spike" in area.get_name():
+		hp -= 1
+		$JadiMerah.start()
+		$Body.get_stylebox("panel", "").set_bg_color(Color("#f11414"))
+		get_node("Body").set_mata(hp)
+		
+		#$Body.get_stylebox("panel", "").update()
+	
 	if area.get_name() == "AreaCursor":
 		counter += 1
-		hp -= 1
 		
-		if hp <= 0:
+		if $Cooldown.is_stopped():
+			$Cooldown.start()
+			hp -= 1
+			get_node("Body").set_mata(hp)
+		
+		
+	if hp <= 0:
+		if $Timer.is_stopped():
 			$Timer.start()
 		
-	get_node("Body").set_mata(hp)
-	
-	
 
 
 func _on_Timer_timeout():
@@ -65,3 +77,12 @@ func _on_Timer_timeout():
 	effect.global_position = global_position
 	get_parent().add_child(effect)
 	queue_free()
+
+
+func _on_JadiMerah_timeout():
+	$Body.get_stylebox("panel", "").set_bg_color(Color("#593d70"))
+
+
+func _on_Level_add_gravity():
+	gravity_scale = 1
+	check_offside = false
